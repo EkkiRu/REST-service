@@ -1,32 +1,32 @@
-﻿using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
+﻿using NHibernate;
+using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
 using REST_service.Date;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Threading.Tasks;
 
 namespace REST_service
 {
-    [Route("api/[controller]")]
+    [Route("")]
     [ApiController]
     public class UserController : ControllerBase
     {
-        ApplicationContext database;
-        public UserController(ApplicationContext context)
-        {
-            database = context;
-        }
+        ISession session;
 
-        static List<User> ListUser = new List<User>();
+        public UserController(ISession session)
+        {
+            this.session = session;
+        }
+        
+        static List<Person> ListPerson = new List<Person>();
 
         [HttpGet]
         public ActionResult GetTest(string text)
         {
             if (text == null)
             {
-                return Ok(JsonConvert.SerializeObject(ListUser));
+                return Ok(JsonConvert.SerializeObject(ListPerson));
             }
             else
             {
@@ -34,20 +34,19 @@ namespace REST_service
             }
         }
         [HttpPost]
-        public async Task<ActionResult<User>> Post(User incominguser)
+        public ActionResult<Person> Post(Person incominguser)
         {
             try
             {
-                var user = database.Users.FirstOrDefault(x => x.IIN == incominguser.IIN);
+                var user = session.Query<Person>().FirstOrDefault(x => x.IIN == incominguser.IIN);
                 if (user != null)
                 {
                     return Ok("Duplicate");
                 }
                 else
                 {
-                    ListUser.Add(incominguser);
-                    database.Users.Add(incominguser);
-                    database.SaveChanges();
+                    ListPerson.Add(incominguser);
+                    session.Save(incominguser);
                     return Ok("Save");
                 }
             }

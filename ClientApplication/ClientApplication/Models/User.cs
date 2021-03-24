@@ -8,7 +8,7 @@ namespace ClientApplication
     public class User
     {
         /*Принимает объект с полями ИИН, Фамилия, Имя, Отчество, дата рождения*/
-        public Guid Id { get; set; } = Guid.NewGuid();
+        public int Id { get; set; }
         public string IIN { get; set; }
         public string Surname { get; set; }
         public string Name { get; set; }

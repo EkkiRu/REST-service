@@ -17,10 +17,10 @@ namespace ClientApplication
         {
             HttpResponseMessage response;
             string responseBody;
-            for (int i = 0; i < 10; i++)
+            for (int i = 0; i < 1; i++)
             {
                 Console.WriteLine($"Введите предложение {i+1}:");
-                response = client.GetAsync($"https://localhost:44324/api/user?text={Console.ReadLine()}").Result;
+                response = client.GetAsync($"https://localhost:44324/?text={Console.ReadLine()}").Result;
                 responseBody = response.Content.ReadAsStringAsync().Result;
                 Console.WriteLine(responseBody);
             }
@@ -28,9 +28,10 @@ namespace ClientApplication
             Random random = new Random();
             for (int i = 0; i < 10; i++)
             {
-                response = client.PostAsync("https://localhost:44324/api/user",
+                response = client.PostAsync("https://localhost:44324/",
                                     new StringContent(JsonConvert.SerializeObject(new User
                                     {
+                                        Id = random.Next(),
                                         Name = random.Next().ToString(),
                                         IIN = random.Next().ToString(),
                                         Surname = random.Next().ToString(),
@@ -42,7 +43,7 @@ namespace ClientApplication
             }
 
 
-            response = client.GetAsync($"https://localhost:44324/api/user?text=").Result;
+            response = client.GetAsync($"https://localhost:44324/?text=").Result;
             List<User> listUsers = JsonConvert.DeserializeObject<List<User>>(response.Content.ReadAsStringAsync().Result);
             for (int i = 0; i < listUsers.Count; i++)
             {

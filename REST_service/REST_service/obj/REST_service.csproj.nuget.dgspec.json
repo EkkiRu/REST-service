@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\rukzw\\source\\repos\\REST_service\\REST_service\\REST_service.csproj": {}
+    "C:\\Users\\rukzw\\OneDrive\\Рабочий стол\\Работа\\REST-service\\REST_service\\REST_service\\REST_service.csproj": {}
   },
   "projects": {
-    "C:\\Users\\rukzw\\source\\repos\\REST_service\\REST_service\\REST_service.csproj": {
+    "C:\\Users\\rukzw\\OneDrive\\Рабочий стол\\Работа\\REST-service\\REST_service\\REST_service\\REST_service.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\rukzw\\source\\repos\\REST_service\\REST_service\\REST_service.csproj",
+        "projectUniqueName": "C:\\Users\\rukzw\\OneDrive\\Рабочий стол\\Работа\\REST-service\\REST_service\\REST_service\\REST_service.csproj",
         "projectName": "REST_service",
-        "projectPath": "C:\\Users\\rukzw\\source\\repos\\REST_service\\REST_service\\REST_service.csproj",
+        "projectPath": "C:\\Users\\rukzw\\OneDrive\\Рабочий стол\\Работа\\REST-service\\REST_service\\REST_service\\REST_service.csproj",
         "packagesPath": "C:\\Users\\rukzw\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\rukzw\\source\\repos\\REST_service\\REST_service\\obj\\",
+        "outputPath": "C:\\Users\\rukzw\\OneDrive\\Рабочий стол\\Работа\\REST-service\\REST_service\\REST_service\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -44,13 +44,21 @@
         "net5.0": {
           "targetAlias": "net5.0",
           "dependencies": {
-            "Microsoft.EntityFrameworkCore.SqlServer": {
+            "FluentNHibernate": {
               "target": "Package",
-              "version": "[5.0.4, )"
+              "version": "[2.1.2, )"
             },
-            "Swashbuckle.AspNetCore": {
+            "Microsoft.AspNet.WebApi.Client": {
               "target": "Package",
-              "version": "[5.6.3, )"
+              "version": "[5.2.7, )"
+            },
+            "Newtonsoft.Json": {
+              "target": "Package",
+              "version": "[13.0.1, )"
+            },
+            "System.Data.SqlClient": {
+              "target": "Package",
+              "version": "[4.8.2, )"
             }
           },
           "imports": [

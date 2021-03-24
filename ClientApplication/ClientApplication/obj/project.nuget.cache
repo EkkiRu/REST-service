@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "RqBAL8+fQsAfLIxl5IwsXvORkQkYoY4P67xfASrSD0g6+n1g3E1C0yAOx59OiAnzbzkOyyou78BjMxQrdN35ig==",
+  "dgSpecHash": "qpE7yg3MJpKZSO8I9tUbsmw9Mk32F8bzo9o/U39t0UvfqXaKJRqSeewRIzOIx+J7HuhN0+QQLrc4JFY4yZtq9g==",
   "success": true,
-  "projectFilePath": "C:\\Users\\rukzw\\source\\repos\\ClientApplication\\ClientApplication\\ClientApplication.csproj",
+  "projectFilePath": "C:\\Users\\rukzw\\OneDrive\\Рабочий стол\\Работа\\REST-service\\ClientApplication\\ClientApplication\\ClientApplication.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\rukzw\\.nuget\\packages\\microsoft.aspnet.webapi.client\\5.2.7\\microsoft.aspnet.webapi.client.5.2.7.nupkg.sha512",
     "C:\\Users\\rukzw\\.nuget\\packages\\microsoft.csharp\\4.5.0\\microsoft.csharp.4.5.0.nupkg.sha512",
